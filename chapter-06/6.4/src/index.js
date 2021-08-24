@@ -6,9 +6,9 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ColorProvider.Provider>
+    <ColorProvider>
       <App />
-    </ColorProvider.Provider>
+    </ColorProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
