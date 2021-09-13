@@ -22,12 +22,13 @@ function List({ data = [], renderItem, renderEmpty }) {
 export default function App() {
   return (
     <List 
-    data={tahoe_peaks}
-    renderEmpty={<p>This list is empty</p>}
-    renderItem={item => (
-      <>
-        {item.name} - {item.elevation.toLocaleString()}
-      </>
-    )} />
+      data={tahoe_peaks}
+      renderEmpty={<p>This list is empty</p>}
+      renderItem={item => (
+        <>
+          {item.name} - {item.elevation.toLocaleString()}
+        </>
+      )} 
+    />
   )
 }
