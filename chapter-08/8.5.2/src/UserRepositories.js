@@ -13,6 +13,7 @@ export default function UserRepositories({
                 <Repomenu
                     repositories={data}
                     onSelect={onSelect}
+                    login={login}
                 />
             )}
         />
