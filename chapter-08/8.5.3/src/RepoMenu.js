@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useIterator } from "./hooks";
-import RepositoryReadme from "./RepositoryReadme";
 
 export function Repomenu({
     repositories,
-    login
+    selected,
+    onSelect = f => f
 }) {
     const [{ name }, prev, next] = useIterator(
-        repositories
+        repositories,
+        selected ? repositories.findIndex(repo => repo.name === selected) : undefined
     );
+
+    useEffect(() => {
+        if (!name) return;
+        onSelect(name);
+      }, [name]);
 
     return (
         <>
@@ -17,7 +23,6 @@ export function Repomenu({
                 <p>{name}</p>
                 <button onClick={next}>&gt;</button>
             </div>
-            <RepositoryReadme login={login} repo={name} />
         </>
     )
 }

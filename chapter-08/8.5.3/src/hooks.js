@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState, useRef, useEffect } from "react";
 
 export const useIterator = (
     items = [],
@@ -19,4 +19,21 @@ export const useIterator = (
     const item = useMemo(() => items[i], [i]);
 
     return [item || items[0], prev, next];
+};
+
+export const useInput = initialValue => {
+    const [value, setValue] = useState(initialValue);
+    return [
+      { value, onChange: e => setValue(e.target.value) },
+      () => setValue(initialValue)
+    ];
+  };
+
+export function useMountedRef() {
+    const mounted = useRef(false);
+    useEffect(() => {
+        mounted.current = true;
+        return () => (mounted.current = false);
+    });
+    return mounted;
 }
