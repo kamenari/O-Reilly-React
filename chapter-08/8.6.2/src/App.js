@@ -21,7 +21,7 @@ const query = `
 
 const client = new GraphQLClient( "https://api.github.com/graphql", {
   headers: {
-    Authorization: `Bearer <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>`
+    Authorization: `Bearer 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`
   }
 });
 
@@ -51,7 +51,7 @@ function List({ data = [], renderItem, renderEmpty }) {
 }
 
 export default function App() {
-  const [login, setLogin] = useState("moontahoe");
+  const [login, setLogin] = useState("kamenari");
   const [userData, setUserData] = useState();
 
   useEffect(() => {
