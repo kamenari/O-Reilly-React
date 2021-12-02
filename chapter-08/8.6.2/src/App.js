@@ -21,7 +21,7 @@ const query = `
 
 const client = new GraphQLClient( "https://api.github.com/graphql", {
   headers: {
-    Authorization: `Bearer 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`
+    Authorization: `Bearer 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`
   }
 });
 
